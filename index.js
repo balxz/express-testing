@@ -4,12 +4,12 @@
    * follow more instagram: @iqstore78
    * follow more github: @balxz
 */
-require("./system/settings.js")
+//require("./system/settings.js")
 const express = require('express')
 const BodyParser = require('body-parser')
-const plgns = require('./plugins/index.js')
-const secure = require("./lib/midleware.js")
-const limit = require("./lib/rate-limit.js")
+//const plgns = require('./plugins/index.js')
+//const secure = require("./lib/midleware.js")
+//const limit = require("./lib/rate-limit.js")
 
 const app = express()
 app.use(BodyParser.json())
@@ -30,14 +30,14 @@ app.use('/req-today', (req, res, secure, limit) => {
 app.use((req, res, limit) => { 
     res.status(404).json({
     status: 404,
-    creator: global.creator,
+    creator: "balxzzy",
     message: "ngapain le 😂"
     })
 })
 
 /** start api **/
-app.listen(YUOR_PORT, () => {
-  console.log("balxzzy backend running on: " + YUOR_PORT)
+app.listen(port, () => {
+  console.log("balxzzy backend running on: 3000")
 })
 
 module.exports = app
