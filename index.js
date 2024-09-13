@@ -24,9 +24,9 @@ app.get("/admin", (req, res) => {
   require("./admin-settings.js")
 })
 
-app.use('/req-today', (req, res) => {
- require("./req-total.ts")
-})
+//app.use('/req-today', (req, res) => {
+ //require("./req-total.ts")
+//})
 
 app.use((req, res) => { 
     res.status(404).json({
