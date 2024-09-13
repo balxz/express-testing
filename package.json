@@ -1,0 +1,15 @@
+{
+  "name": "open-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "*",
+    "express": "*",
+    "body-parser": "*",
+    "axios": "*",
+    "path": "^*",
+    "serve-favicon": "*",
+    "fs": "^0.0.1-security",
+  }
+}
