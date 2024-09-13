@@ -7,6 +7,7 @@
 //require("./system/settings.js")
 const express = require('express')
 const BodyParser = require('body-parser')
+const adminSettings = require("./admin-settings");
 //const plgns = require('./plugins/index.js')
 //const secure = require("./lib/midleware.js")
 //const limit = require("./lib/rate-limit.js")
@@ -21,8 +22,8 @@ app.get("/", (req, res) => {
 })
 
 app.get("/admin", (req, res) => {
-  require("./admin-settings.js")
-})
+  adminSettings(req, res);
+});
 
 //app.use('/req-today', (req, res) => {
  //require("./req-total.ts")
