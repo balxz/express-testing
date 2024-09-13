@@ -12,22 +12,23 @@ const BodyParser = require('body-parser')
 //const limit = require("./lib/rate-limit.js")
 
 const app = express()
+const port = 3000
 app.use(BodyParser.json())
 
 /** endpoint **/
-app.get("/", (req, res, limit) => {
+app.get("/", (req, res) => {
   res.send("Hello Word")
 })
 
-app.get("/admin", (req, res, limit) => {
-  require("./system/admin-settings.js")
+app.get("/admin", (req, res) => {
+  require("./admin-settings.js")
 })
 
-app.use('/req-today', (req, res, secure, limit) => {
- require("./system/req-total.ts")
+app.use('/req-today', (req, res) => {
+ require("./req-total.ts")
 })
 
-app.use((req, res, limit) => { 
+app.use((req, res) => { 
     res.status(404).json({
     status: 404,
     creator: "balxzzy",
@@ -37,7 +38,7 @@ app.use((req, res, limit) => {
 
 /** start api **/
 app.listen(port, () => {
-  console.log("balxzzy backend running on: 3000")
+  console.log(`balxzzy backend running on: ${port}`)
 })
 
 module.exports = app
