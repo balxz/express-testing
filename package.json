@@ -10,6 +10,6 @@
     "axios": "*",
     "path": "^*",
     "serve-favicon": "*",
-    "fs": "^0.0.1-security",
+    "fs": "^0.0.1-security"
   }
 }
