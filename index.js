@@ -17,11 +17,11 @@ const port = 3000
 app.use(BodyParser.json())
 
 /** endpoint **/
-app.get("/", (req, res,limit) => {
-  res.send("Hello Word")
-})
+app.get("/", limit, (req, res) => {
+  res.send("Hello World");
+});
 
-app.get("/admin", (req, res, limit) => {
+app.get("/admin", limit, (req, res) => {
   adminSettings(req, res);
 });
 
