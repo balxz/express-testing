@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "*",
     "express": "*",
+    "express-rate-limit": "*",
     "body-parser": "*",
     "axios": "*",
     "path": "^*",
