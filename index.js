@@ -10,18 +10,18 @@ const BodyParser = require('body-parser')
 const adminSettings = require("./admin-settings");
 //const plgns = require('./plugins/index.js')
 //const secure = require("./lib/midleware.js")
-//const limit = require("./lib/rate-limit.js")
+const limit = require("./rate-limit")
 
 const app = express()
 const port = 3000
 app.use(BodyParser.json())
 
 /** endpoint **/
-app.get("/", (req, res) => {
+app.get("/", (req, res,limit) => {
   res.send("Hello Word")
 })
 
-app.get("/admin", (req, res) => {
+app.get("/admin", (req, res, limit) => {
   adminSettings(req, res);
 });
 
@@ -29,7 +29,7 @@ app.get("/admin", (req, res) => {
  //require("./req-total.ts")
 //})
 
-app.use((req, res) => { 
+app.use((req, res, limit) => { 
     res.status(404).json({
     status: 404,
     creator: "balxzzy",
